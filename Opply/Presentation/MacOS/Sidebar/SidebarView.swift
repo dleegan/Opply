@@ -1,6 +1,6 @@
 //
 //  SidebarView.swift
-//  ApplyTo
+//  Opply
 //
 //  Created by Leegan DUPROS on 30/06/2025.
 //
@@ -13,7 +13,7 @@ struct SidebarView: View {
     var body: some View {
         List(selection: $selection) {
             VStack {
-                Text("ApplyTo")
+                Text("Opply")
                     .bold()
                     .font(.largeTitle)
             }
@@ -40,7 +40,7 @@ struct SidebarView: View {
             }
 
             Section("Last Submissions") {
-                ForEach(Array(Submission.examples().prefix(4))) { submission in
+                ForEach(Array(Submisssion.examples().prefix(4))) { submission in
                     Label("\(submission.company): \(submission.name) \(submission.id)", systemImage: "doc.text.fill")
                         .tag("\(submission.id)")
 //                        .contextMenu {
@@ -50,7 +50,7 @@ struct SidebarView: View {
             }
 
             Section("Tags") {
-                ForEach(Array(Submission.examples().prefix(4))) { submission in
+                ForEach(Array(Submisssion.examples().prefix(4))) { submission in
                     Label("\(submission.company): \(submission.name)", systemImage: "number.circle.fill")
                         .tag("\(submission.company): \(submission.name)")
 //                        .contextMenu {

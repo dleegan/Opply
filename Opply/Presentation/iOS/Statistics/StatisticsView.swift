@@ -1,6 +1,6 @@
 //
 //  StatisticsView.swift
-//  ApplyTo
+//  Opply
 //
 //  Created by Leegan DUPROS on 04/07/2025.
 //

@@ -1,13 +1,13 @@
 //
 //  Submission.swift
-//  ApplyTo
+//  Opply
 //
 //  Created by Leegan DUPROS on 30/06/2025.
 //
 
 import Foundation
 
-struct Submission: Identifiable {
+struct Submisssion: Identifiable {
     let id = UUID()
     var name: String
     var company: String
@@ -27,16 +27,16 @@ struct Submission: Identifiable {
         self.link = link
     }
 
-    static func example() -> Submission {
-        Submission(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com")
+    static func example() -> Submisssion {
+        Submisssion(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com")
     }
 
-    static func examples() -> [Submission] {
+    static func examples() -> [Submisssion] {
         [
-            Submission(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
-            Submission(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
-            Submission(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
-            Submission(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com")
+            Submisssion(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
+            Submisssion(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
+            Submisssion(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com"),
+            Submisssion(name: "Dev Full-Stack", company: "Listen Too", city: "Lille", country: "France", date: Date.now, description: "Un poste de developpeur full-stack js", link: "google.com")
         ]
     }
 }

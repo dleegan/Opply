@@ -1,6 +1,6 @@
 //
 //  TemplatesView+MacOS.swift
-//  ApplyToMacOS
+//  Opply
 //
 //  Created by Leegan DUPROS on 04/07/2025.
 //
