@@ -1,21 +1,20 @@
 //
-//  ContentView.swift
-//  Opply
+//  StatisticsView.swift
+//  ApplyTo
 //
-//  Created by Leegan DUPROS on 05/07/2025.
+//  Created by Leegan DUPROS on 04/07/2025.
 //
 
 import SwiftUI
-import CoreData
-
-struct ContentView: View {
+ 
+struct StatisticsView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -29,11 +28,6 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
@@ -43,12 +37,12 @@ struct ContentView: View {
             Text("Select an item")
         }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -59,11 +53,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -84,5 +78,6 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    StatisticsView()
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
