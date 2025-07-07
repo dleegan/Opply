@@ -46,12 +46,8 @@ struct Step1_MacOS: View {
 
                 VStack(alignment: .leading) {
                     Text("Créer une fiche entreprise")
-                    TextField("Nom de l'entreprise", text: Binding(get: {
-                        vm.company?.name ?? ""
-                    }, set: { value in
-                        vm.company?.name = value
-                    }))
-                    .textFieldStyle(.roundedBorder)
+                    TextField("Nom de l'entreprise", text: $vm.company.name)
+                        .textFieldStyle(.roundedBorder)
 
                     TextField("Lien de l'entreprise", text: Binding(get: {
                         vm.company?.name ?? ""

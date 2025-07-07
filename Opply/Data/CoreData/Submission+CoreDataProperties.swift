@@ -20,9 +20,9 @@ extension Submission {
     @NSManaged public var content: String?
     @NSManaged public var country: String?
     @NSManaged public var createdAt: Date?
+    @NSManaged public var id: UUID?
     @NSManaged public var link: URL?
     @NSManaged public var title: String?
-    @NSManaged public var id: UUID?
     @NSManaged public var company: Company?
     @NSManaged public var interviews: NSSet?
     @NSManaged public var steps: NSSet?

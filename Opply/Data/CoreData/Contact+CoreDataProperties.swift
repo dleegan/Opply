@@ -18,11 +18,11 @@ extension Contact {
 
     @NSManaged public var email: String?
     @NSManaged public var firstName: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var job: String?
     @NSManaged public var lastName: String?
     @NSManaged public var linkedInUrl: URL?
     @NSManaged public var phone: String?
-    @NSManaged public var id: UUID?
     @NSManaged public var company: Company?
 
 }

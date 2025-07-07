@@ -16,9 +16,9 @@ extension Company {
         return NSFetchRequest<Company>(entityName: "Company")
     }
 
+    @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var webSite: URL?
-    @NSManaged public var id: UUID?
     @NSManaged public var contacts: NSSet?
     @NSManaged public var submissions: NSSet?
 

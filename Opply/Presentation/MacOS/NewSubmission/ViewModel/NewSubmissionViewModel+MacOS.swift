@@ -9,14 +9,15 @@ import CoreData
 import Foundation
 
 class NewSubmissionViewModel_MacOS: ObservableObject {
+    let context = PersistenceController.shared.container.viewContext
+
     @Published var companies: [Company]
     @Published var company: Company?
     @Published var stepIndicator: Int
 
     init() {
-        let context = PersistenceController.shared.container.viewContext
-        self.company = nil
         self.companies = []
+        self.company = nil
         self.stepIndicator = 0
     }
 
@@ -24,10 +25,8 @@ class NewSubmissionViewModel_MacOS: ObservableObject {
         print("NewSubmissionViewModel_MacOS | fetchCompanies()")
         let fetchRequest: NSFetchRequest<Company>
         fetchRequest = Company.fetchRequest()
-        let context = PersistenceController.shared.container.viewContext
         do {
             let objects = try context.fetch(fetchRequest)
-
             print("pre=>", companies)
             companies = objects.filter { company in
                 (company.name?.isEmpty) == false
@@ -46,7 +45,6 @@ class NewSubmissionViewModel_MacOS: ObservableObject {
 
     func saveCompany() {
         do {
-            let context = PersistenceController.shared.container.viewContext
             let company = Company(context: context)
 
             company.id = UUID()
