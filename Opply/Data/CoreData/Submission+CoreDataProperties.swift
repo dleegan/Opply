@@ -2,7 +2,7 @@
 //  Submission+CoreDataProperties.swift
 //  Opply
 //
-//  Created by Leegan DUPROS on 05/07/2025.
+//  Created by Leegan DUPROS on 07/07/2025.
 //
 //
 
@@ -17,13 +17,15 @@ extension Submission {
     }
 
     @NSManaged public var city: String?
+    @NSManaged public var content: String?
     @NSManaged public var country: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var link: URL?
     @NSManaged public var title: String?
+    @NSManaged public var id: UUID?
+    @NSManaged public var company: Company?
     @NSManaged public var interviews: NSSet?
     @NSManaged public var steps: NSSet?
-    @NSManaged public var company: Company?
 
 }
 

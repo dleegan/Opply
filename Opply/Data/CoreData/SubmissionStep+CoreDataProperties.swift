@@ -2,7 +2,7 @@
 //  SubmissionStep+CoreDataProperties.swift
 //  Opply
 //
-//  Created by Leegan DUPROS on 05/07/2025.
+//  Created by Leegan DUPROS on 07/07/2025.
 //
 //
 
@@ -19,6 +19,7 @@ extension SubmissionStep {
     @NSManaged public var date: Date?
     @NSManaged public var name: String?
     @NSManaged public var note: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var submission: Submission?
 
 }

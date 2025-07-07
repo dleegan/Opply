@@ -2,7 +2,7 @@
 //  Company+CoreDataProperties.swift
 //  Opply
 //
-//  Created by Leegan DUPROS on 05/07/2025.
+//  Created by Leegan DUPROS on 07/07/2025.
 //
 //
 
@@ -18,6 +18,7 @@ extension Company {
 
     @NSManaged public var name: String?
     @NSManaged public var webSite: URL?
+    @NSManaged public var id: UUID?
     @NSManaged public var contacts: NSSet?
     @NSManaged public var submissions: NSSet?
 

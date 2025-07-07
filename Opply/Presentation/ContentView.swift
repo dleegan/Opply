@@ -33,4 +33,7 @@ struct ContentView: View {
             \.managedObjectContext,
             PersistenceController.preview.container.viewContext
         )
+    #if os(macOS)
+        .frame(width: 1000, height: 600)
+    #endif
 }
