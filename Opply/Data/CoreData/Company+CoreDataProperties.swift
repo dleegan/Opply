@@ -6,58 +6,51 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension Company {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Company> {
+public extension Company {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<Company> {
         return NSFetchRequest<Company>(entityName: "Company")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var webSite: URL?
-    @NSManaged public var contacts: NSSet?
-    @NSManaged public var submissions: NSSet?
-
+    @NSManaged var id: UUID?
+    @NSManaged var name: String?
+    @NSManaged var webSite: URL?
+    @NSManaged var contacts: NSSet?
+    @NSManaged var submissions: NSSet?
 }
 
 // MARK: Generated accessors for contacts
-extension Company {
 
+public extension Company {
     @objc(addContactsObject:)
-    @NSManaged public func addToContacts(_ value: Contact)
+    @NSManaged func addToContacts(_ value: Contact)
 
     @objc(removeContactsObject:)
-    @NSManaged public func removeFromContacts(_ value: Contact)
+    @NSManaged func removeFromContacts(_ value: Contact)
 
     @objc(addContacts:)
-    @NSManaged public func addToContacts(_ values: NSSet)
+    @NSManaged func addToContacts(_ values: NSSet)
 
     @objc(removeContacts:)
-    @NSManaged public func removeFromContacts(_ values: NSSet)
-
+    @NSManaged func removeFromContacts(_ values: NSSet)
 }
 
 // MARK: Generated accessors for submissions
-extension Company {
 
+public extension Company {
     @objc(addSubmissionsObject:)
-    @NSManaged public func addToSubmissions(_ value: Submission)
+    @NSManaged func addToSubmissions(_ value: Submission)
 
     @objc(removeSubmissionsObject:)
-    @NSManaged public func removeFromSubmissions(_ value: Submission)
+    @NSManaged func removeFromSubmissions(_ value: Submission)
 
     @objc(addSubmissions:)
-    @NSManaged public func addToSubmissions(_ values: NSSet)
+    @NSManaged func addToSubmissions(_ values: NSSet)
 
     @objc(removeSubmissions:)
-    @NSManaged public func removeFromSubmissions(_ values: NSSet)
-
+    @NSManaged func removeFromSubmissions(_ values: NSSet)
 }
 
-extension Company : Identifiable {
-
-}
+extension Company: Identifiable {}

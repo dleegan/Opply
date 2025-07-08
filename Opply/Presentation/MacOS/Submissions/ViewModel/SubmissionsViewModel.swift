@@ -25,6 +25,8 @@ class SubmissionsViewModel: ObservableObject {
         // Fetch all objects of one Entity type
         do {
             let objects = try context.fetch(fetchRequest)
+
+            print("objects=>\(objects)")
             submissions = objects
         } catch {
             print("Error")

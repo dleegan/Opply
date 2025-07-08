@@ -43,7 +43,11 @@ struct NewSubmissionView_MacOS: View {
                         JobInfos_MacOS(vm: vm)
                     case 2:
                         VStack {
-                            Text("View 2")
+                            Button {
+                                dismiss()
+                            } label: {
+                                Text("Dismiss")
+                            }
                         }
                     default:
                         VStack {}
@@ -62,7 +66,7 @@ struct NewSubmissionView_MacOS: View {
                             vm.saveCompany()
 
                         case 1:
-                            vm.stepIndicator = 0
+                            vm.saveSubmission()
 
                         default:
                             vm.stepIndicator = 0

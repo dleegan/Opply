@@ -17,20 +17,20 @@ struct JobInfos_MacOS: View {
                 .bold()
 
             HStack {
-                TextField("Nom du poste...", text: .constant(""))
+                TextField("Nom du poste...", text: $vm.newSubmission.title)
                     .textFieldStyle(.roundedBorder)
-                DatePicker(selection: .constant(.now)) {}
+                DatePicker(selection: $vm.newSubmission.createdAt) {}
             }
 
             HStack {
-                TextField("Ville", text: .constant(""))
+                TextField("Ville", text: $vm.newSubmission.city)
                     .textFieldStyle(.roundedBorder)
 
-                TextField("Pays", text: .constant(""))
+                TextField("Pays", text: $vm.newSubmission.country)
                     .textFieldStyle(.roundedBorder)
             }
 
-            TextEditor(text: .constant(""))
+            TextEditor(text: $vm.newSubmission.description)
                 .frame(height: 100)
                 .textEditorStyle(.plain)
                 .padding(.horizontal, 5)
@@ -40,7 +40,7 @@ struct JobInfos_MacOS: View {
                     in: RoundedRectangle(cornerRadius: 5)
                 )
 
-            TextField("Lien vers l'offre...", text: .constant(""))
+            TextField("Lien vers l'offre...", text: $vm.newSubmission.link)
                 .textFieldStyle(.roundedBorder)
         }
         .padding()

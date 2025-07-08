@@ -62,12 +62,16 @@ struct SubmissionsView: View {
                             .font(.title)
                             .bold()
 
-                        Table(people) {
-                            TableColumn("Entreprise", value: \.company)
-                            TableColumn("Nom du Poste", value: \.name)
-                            TableColumn("Ville", value: \.city)
-                            TableColumn("Description", value: \.description)
-                            TableColumn("Lien", value: \.link)
+                        ForEach(vm.submissions) { submission in
+                            VStack {
+                                Text("\(submission.company?.name ?? "")")
+                            }
+                        }
+                        Table(vm.submissions) {
+                            TableColumn("Entreprise", value: \.title!)
+                            TableColumn("Nom du Poste", value: \.title!)
+                            TableColumn("Ville", value: \.city!)
+                            TableColumn("Description", value: \.content!)
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
